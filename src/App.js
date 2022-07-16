@@ -3,9 +3,8 @@ import Alert from './Components/Alert';
 import './App.css';
 import Nav from './Components/Navbar'
 import TextUtil from './Components/TextUtil';
-//import ReactDOM from "react-dom/client";
-//import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-//import About from './Components/About';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import About from './Components/About';
 
 function App() {
 
@@ -38,19 +37,17 @@ function App() {
   }
   return (
     <>
-     <Nav logo="Kunal" mode={darkMode} checkbtn={darkModeEnable}/>
-     <Alert message={alert}/>
-     <TextUtil mode={darkMode} getAlert={getAlert} />
-
-       {/* <BrowserRouter>
+      
+     
+        <BrowserRouter>
+        <Nav logo="Kunal" mode={darkMode} checkbtn={darkModeEnable}/>
+        <Alert message={alert}/>
           <Routes>
-            <Route path="/" element={} >
-              <Route index element={}/>
-              <Route path="about" element={<About />} />
-            </Route>
+              <Route path="/" element={<TextUtil mode={darkMode} getAlert={getAlert} />} />
+              <Route path="about" element={<About mode={darkMode} />}/>
           </Routes>
-          
-  </BrowserRouter>*/}      
+        </BrowserRouter>
+        
     </>
   );
 }
